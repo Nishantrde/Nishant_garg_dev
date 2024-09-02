@@ -3,11 +3,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'Open Sans', sans-serif;
 }
 
 body {
     line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 /* Container */
@@ -19,31 +21,38 @@ body {
 
 /* Header */
 header {
-    background: #333;
+    background: linear-gradient(45deg, #333, #555);
     color: #fff;
     padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header h1 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    padding: 0.5rem;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0 1.5rem;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -52,14 +61,23 @@ nav ul li a:hover {
 
 /* Sections */
 section {
-    padding: 2rem 0;
+    padding: 4rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 section h2 {
     text-align: center;
     margin-bottom: 2rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #333;
+    font-weight: 600;
 }
 
 /* Summary Section */
@@ -67,7 +85,8 @@ section h2 {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    color: #555;
+    color: #666;
+    font-size: 1.2rem;
 }
 
 /* Skills Section */
@@ -75,44 +94,75 @@ section h2 {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .skill {
-    background: #f4f4f4;
-    padding: 1rem;
-    border-radius: 5px;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 1rem;
     flex: 1 1 30%;
     max-width: 30%;
     text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .skill h3 {
     color: #ff9800;
+    font-size: 1.5rem;
+}
+
+/* Hover Effect for Skills */
+.skill:hover {
+    transform: scale(1.05);
+    background-color: #ff9800;
+}
+
+.skill:hover h3 {
+    color: #fff;
+}
+
+.skill:hover p {
+    color: #fff;
 }
 
 /* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
 .project-card {
-    background: #f4f4f4;
-    padding: 1rem;
-    border-radius: 5px;
-    margin: 1rem 0;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
 .project-card h3 {
     color: #333;
+    font-size: 1.8rem;
 }
 
 .btn {
     display: inline-block;
     margin-top: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     background: #ff9800;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
+    font-weight: 500;
 }
 
 .btn:hover {
@@ -124,11 +174,13 @@ section h2 {
     text-align: center;
     color: #555;
     margin: 0.5rem 0;
+    font-size: 1.1rem;
 }
 
 #contact a {
     color: #ff9800;
     text-decoration: none;
+    font-weight: 500;
 }
 
 #contact a:hover {
@@ -140,7 +192,9 @@ footer {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 footer a {
@@ -152,6 +206,27 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Back-to-Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff9800;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.2rem;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.back-to-top:hover {
+    background: #333;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .skills-list {
@@ -161,5 +236,13 @@ footer a:hover {
 
     .skill, .project-card {
         max-width: 100%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
     }
 }

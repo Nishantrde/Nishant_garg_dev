@@ -6,7 +6,7 @@
     <title>Nishant Garg | Web Scraping Specialist Portfolio</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header Section -->
@@ -25,7 +25,7 @@
     </header>
 
     <!-- Summary Section -->
-    <section id="summary">
+    <section id="summary" class="fade-in">
         <div class="container">
             <h2>Summary</h2>
             <p>As a passionate developer, I am committed to continuous learning and staying updated on the latest framework advancements, ensuring proficiency in creating robust applications.</p>
@@ -33,7 +33,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
+    <section id="skills" class="fade-in">
         <div class="container">
             <h2>Technical Skills</h2>
             <div class="skills-list">
@@ -54,40 +54,41 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" class="fade-in">
         <div class="container">
             <h2>Projects</h2>
 
-            <div class="project-card">
-                <h3>YT Scraper</h3>
-                <p>(YouTube Data Scraper)</p>
-                <p>YT Scraper is a powerful tool designed to scrape YouTube comments, allowing you to analyze user engagement on your channel. With this tool, you can identify users who have been actively engaging with your content over time, even if they haven't been in the spotlight.</p>
-                <a href="#" class="btn">View Project</a>
-            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>YT Scraper</h3>
+                    <p>(YouTube Data Scraper)</p>
+                    <p>YT Scraper is a powerful tool designed to scrape YouTube comments, allowing you to analyze user engagement on your channel. With this tool, you can identify users who have been actively engaging with your content over time, even if they haven't been in the spotlight.</p>
+                    <a href="https://yt-scraper-blond.vercel.app/" class="btn">View Project</a>
+                </div>
 
-            <div class="project-card">
-                <h3>YT Data Analyzer</h3>
-                <p>(YouTube Data Analyzing Tool)</p>
-                <p>YT Data Analyzer is a tool designed to analyze YouTube comment sections and present the data visually. It helps you explore and visualize the various topics discussed in the comments, providing clear insights into viewer engagement.</p>
-                <a href="#" class="btn">View Project</a>
-            </div>
+                <div class="project-card">
+                    <h3>YT Data Analyzer</h3>
+                    <p>(YouTube Data Analyzing Tool)</p>
+                    <p>YT Data Analyzer is a tool designed to analyze YouTube comment sections and present the data visually. It helps you explore and visualize the various topics discussed in the comments, providing clear insights into viewer engagement.</p>
+                    <a href="https://yt-scraper-blond.vercel.app/yt_lda_model" class="btn">View Project</a>
+                </div>
 
-            <div class="project-card">
-                <h3>Sikkim Tourism</h3>
-                <p>(Tourism website for Sikkim)</p>
-                <p>Developed as a freelancing project, Sikkim Tourism is a comprehensive tourism website created for a client. Utilizing Django for the backend and HTML/CSS for the frontend, the site features photo viewing, sharing, and review checking capabilities.</p>
-                <a href="#" class="btn">View Project</a>
+                <div class="project-card">
+                    <h3>Sikkim Tourism</h3>
+                    <p>(Tourism website for Sikkim)</p>
+                    <p>Developed as a freelancing project, Sikkim Tourism is a comprehensive tourism website created for a client. Utilizing Django for the backend and HTML/CSS for the frontend, the site features photo viewing, sharing, and review checking capabilities.</p>
+                    <a href="https://sikkimrider.vercel.app/" class="btn">View Project</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="fade-in">
         <div class="container">
             <h2>Contact Information</h2>
             <p><strong>Phone:</strong> +91 9934194809</p>
             <p><strong>Email:</strong> <a href="mailto:nishant.garg.dev@gmail.com">nishant.garg.dev@gmail.com</a></p>
-            <p><strong>Website:</strong> <a href="http://yourwebsite.domain" target="_blank">yourwebsite.domain</a></p>
         </div>
     </section>
 
@@ -99,7 +100,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for smooth scrolling -->
+    <!-- JavaScript for smooth scrolling and animations -->
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
